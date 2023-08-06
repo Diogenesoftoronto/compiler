@@ -11,7 +11,7 @@ def mostRecentModification(directory):
 
 	for dirpath, dirs, files in os.walk(directory):
 		for f in files:
-			lastModified = os.path.getmtime(dirpath + '/' + f)
+			lastModified = os.path.getmtime(f'{dirpath}/{f}')
 			mostRecent = max(int(lastModified), mostRecent)
 
 	return mostRecent
